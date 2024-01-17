@@ -1,0 +1,8 @@
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WeBlog | <%= title %></title>
+  <!-- /styles.css works because we exposed in the public folder using middleware app.use(express.static('public'))-->
+  <!-- also don't write ../public/styles.css, its available publicly -->
+  <link rel="stylesheet" href="/styles.css">  
+</head>
