@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../../partials/header.ejs') %>
+
+  <body>
+    <%- include('../../partials/nav.ejs') %>
+
+    <div class="singleblog-post">
+      <h2 class="singleblog-title"><%=blog.title%></h2>
+      <p class="singleblog-snippet"><%=blog.snippet%></p>
+      <div class="singleblog-body">
+        <p><%=blog.body%></p>
+      </div>
+      <button
+        class="singleblog-deleteButton"
+        onclick="handleClick('<%=blog._id%>')"
+      >
+        Delete Blog
+      </button>
+    </div>
+    <script>
+      function editBlog() {
+        alert("Edit clicked");
+      }
+
+      function handleClick(id) {
+        const endpoint = "/blogs/" + id;
+        // send a delete request and handle it in app.js
+        fetch(endpoint, {
+          method: "DELETE",
+        })
+          //now once the app.delete is finished it retures a json object which we'll handle here
+          .then((response) => response.json())
+          .then((data) => (window.location.href = data.redirect))
+          .catch((err) => {
+            console.log("Some error : " + err);
+          });
+      }
+    </script>
+  </body>
+  <%- include('../../partials/footer.ejs')%>
+</html>

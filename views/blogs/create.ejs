@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include('../partials/header.ejs') %>
+  <%- include('../../partials/header.ejs') %>
   <body>
-    <%- include('../partials/nav.ejs') %>
+    <%- include('../../partials/nav.ejs') %>
 
     <div class="container">
       <h2 class="container-title">Create a blog</h2>
-      <form>
+      <form method="post" action="/blogs/create">
         <label for="blogTitle">Title</label>
         <input type="text" id="blogTitle" name="blogTitle" required />
 
@@ -16,10 +16,10 @@
         <label for="blogBody">Body</label>
         <textarea id="blogBody" name="blogBody" rows="8" required></textarea>
         <div class="container-title">
-          <button type="submit">Submit</button>
+          <button>Submit</button>
         </div>
       </form>
     </div>
   </body>
-  <%- include('../partials/footer.ejs')%>
+  <%- include('../../partials/footer.ejs')%>
 </html>

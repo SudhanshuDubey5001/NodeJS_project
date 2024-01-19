@@ -5,11 +5,11 @@
     <%- include('../partials/nav.ejs') %>
 
     <div class="container-about">
-      <h1>404 Not Found</h1>
-      <p>
-        Oops! It looks like the page you are trying to access does not exist.
-      </p>
-      <p>Please check the URL or go back to the <a href="/">home page</a>.</p>
+      <h1>Error occurred</h1>
+      <p><%=error%></p>
+      <div class="hyperlinkStyle">
+        <p>Please check the URL or go back to the <a href="/"><strong>Home Page</strong></a>.</p>
+      </div>
     </div>
   </body>
   <%- include('../partials/footer.ejs')%>
